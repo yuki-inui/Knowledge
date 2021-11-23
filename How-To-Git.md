@@ -29,4 +29,9 @@ git branch -M main`<br>
 
 ## ブランチをリモートに入れる
    `git push origin example`を実行
+   
+## ブランチの変更点をmainに取り込みリモートに入れる
+1. `git checkout main`を実行する
+2. `git merge example` を実行するとmainに取り込まれる
+3. `git pull origin main`で完了
 
