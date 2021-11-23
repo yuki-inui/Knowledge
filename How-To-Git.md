@@ -9,10 +9,13 @@
  
 7. github でリポジトリを作成し　sshをおしてコピーをする　`or push an existing...`　
 8. `git remote add origin git@github.com:あなたのユーザー名/git-study.git
-git branch -M main
-git push -u origin main`　を実行
+git branch -M main`<br>
+**`git push -u origin main`**　を実行
 8. 作成upload完了
 
 ## 変更したい(ファイルの追加)とき
 1. ファイル作成し前項の3. から進める　　
-2. 全部のファイルを上げたい時は `git add .`をやる  それ以降　
+2. 全部のファイルを上げたい時は `git add .`をやる  それ以降は同順
+
+## githubで変更した場合の取り込み方
+   `git pull origin main`を実行する
