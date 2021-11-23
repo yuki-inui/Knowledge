@@ -19,3 +19,14 @@ git branch -M main`<br>
 
 ## githubで変更した場合の取り込み方
    `git pull origin main`を実行する
+
+## ブランチの作成
+1. `git branch example`でブランチを作成する
+2. `git branch` を実行すると<br>example<br>*main が表示される<br>この時点ではmainにいる
+3. `git checkout example`<br>`git branch`をする
+4. exampleに移動する
+5. mainに戻るなら`git checkout main`を実行する
+
+## ブランチをリモートに入れる
+   `git push origin example`を実行
+
