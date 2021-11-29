@@ -55,6 +55,25 @@ Sliceメソッドは　startとend が明記されている場合、startからe
 `console.log(lst.slice().sort((n, m) => n < m ? -1 : 1)); //[1,3,5,7]`<br>
 `console.log(lst); //[5,7,1,3]`<br>
 
+objectと反復処理
+---
+`Object.key()`はプロパティのキーのリスト<br>
+`Object.value()`はプロパティ値のリスト<br>
+`Object.entire()`はキーと一体となった全て<br>
+
+参考コード<br>
+`const user = {`<br>
+ `name: 'Yuki-Inui',`<br>
+ `username: 'Yuki',`<br>
+ `id: 3,`<br>
+ `email: Yuki@gmail.com,`<br>
+ `};`<br>
+ 
+`console.log(Object.keys(user));`<br>
+`// [ 'id', 'name', 'username', 'email' ]`<br>
+
+`console.log(Object.values(user));`<br>
+`// [ 3, 'Bobby Bear', 'bobby', 'bobby@maple.town' ]`<br>
 
 
 
