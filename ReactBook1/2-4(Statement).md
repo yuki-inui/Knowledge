@@ -1,0 +1,1 @@
+# 関数宣言(statements)と関数式(expression)
