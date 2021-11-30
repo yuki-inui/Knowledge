@@ -31,6 +31,45 @@ const triple = withMultiple(3);
 console.log(triple(5));   
 
 
+# クロージャーについて
+let count = 0;   
+const increment = () => { return count += 1;   
+};   
+$ node    
+ .load open-counter.js  
+ increment(); 1  
+ increment(); 2  
+ count 2   
+ 
+ このままではconstの値に依存することになり、グローバル変数がゆえにどこからでも、改変が可能になる　　　
+ 
+ 
+ $ node  
+ const counter = (count = 0) => (adds = 1) => count += adds;   
+ const increment = counter();`   
+ increment(); 1   
+ increment(2); 3
+ 
+ 
+ let frinedship;   
+if (true) {          
+const he = 'Kakeru'; const saveHim = () => {     
+console.log(`${he} saved`); };      
+}
+このままではheがifを外れると、どこからも参照されなくなる。
+
+ここで
+const saveHim = () => {　　　　
+console.log(`${he} saved`); };　　　　　　
++ friendship=saveHim;　　　　　　　
+}　　　　
++friendship(); //Kakerusaved　　　
+
+こうすることで参照をされる
+ 
+ 
+
+
 
 
 
