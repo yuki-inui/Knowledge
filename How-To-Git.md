@@ -35,3 +35,6 @@ git branch -M main`<br>
 2. `git merge example` を実行するとmainに取り込まれる
 3. `git pull origin main`で完了
 
+## ローカルとリモートの変更ミス？
+git retore はローカルの変更を白紙にする。
+
