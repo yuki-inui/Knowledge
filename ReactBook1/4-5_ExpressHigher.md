@@ -5,11 +5,11 @@
 型のコンテキストで用いると変数から型を抽出してくれる       
 
   ```
-  console.log(typeof　100); //'number'
+console.log(typeof　100); //'number'
 const arr = [1, 2, 3];
- console.log(typeof　arr); //'object'
+console.log(typeof　arr); //'object'
 type NumArr = typeof arr;
- const val: NumArr = [4, 5, 6];
+const val: NumArr = [4, 5, 6];
 constval2:NumArr=['foo','bar','baz']; //compileerror!
 ```
 NumArrは`number[]`であるため`string[]`はエラーになる。これは型推論   
@@ -27,9 +27,9 @@ for(const key in obj){console.log(key);} //abc
 type Fig = 'one' | 'two' | 'three'; 
 type FigMap = { [k in Fig]?: number };
 const figMap: FigMap = {
-one: 1,
-two: 2,
-three: 3, 
+ one: 1,
+ two: 2,
+ three: 3, 
 };
 figMap.four=4; //compileerror!
 ```
@@ -38,9 +38,9 @@ figMap.four=4; //compileerror!
 
 ```
 const permissions = {
-r: 0b100,
-w: 0b010,
-x: 0b001,
+ r: 0b100,
+ w: 0b010,
+ x: 0b001,
 };
 typePermsChar=keyoftypeofpermissions; //'r'|'w'|'x' 
 const readable: PermsChar = 'r';
