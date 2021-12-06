@@ -68,4 +68,23 @@ override({ a: 2 }, { x: 73 }); // compile error!
 は第一引数`obj1`の型`T`と同じか拡張したものでないといけない、というものを示すもの。
 
 ## 条件付き型
+```
+type User = { id: unknown };
+type NewUser = User & { id: string }; 
+type OldUser = User & { id: number }; 
+type Book = { isbn: string };
+type IdOf<T> = T extends User ? T['id'] : never;
+type NewUserId = IdOf<NewUser>; //string typeOldUserId=IdOf<OldUser>; //number
+type BookId = IdOf<Book>; // never
+```
+
+## `infer`
+そのマッチング中に取得した型を出力にも利用できるよ。そ れには infer というキーワードを使う   
+```
+type Flatten<T> = T extends Array<infer U> ? U : T;
+const num = 5;
+const arr = [3, 6, 9]; 
+typeA = Flatten<typeofarr>; //number
+typeN = Flatten<typeofnum>; //number
+
 
