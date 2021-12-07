@@ -86,8 +86,47 @@ const num = 5;
 const arr = [3, 6, 9]; 
 typeA = Flatten<typeofarr>; //number
 typeN = Flatten<typeofnum>; //number   
+```
 この例では型 T が何らかの型の配列だった場合、その配列の中身の型を infer U で型 U として 取得し、出力の型として使ってる。配列じゃなかった場合はそのままその型が出力される   
 
+## `Template Literal Type`
+```
+type DateFormat = `${number}-${number}-${number}`; 
+const date1: DateFormat = '2020-12-05';
+const date2: DateFormat = 'Dec. 5, 2020'; //compileerror!
+```
+
+```
+const tables = ['users', 'posts', 'comments'] as const; 
+type Table = typeof tables[number];
+type AllSelect = `SELECT * FROM ${Table}`;
+type LimitSelect = `${AllSelect} LIMIT ${number}`;
+const createQuery = (table: Table, limit?: number): AllSelect | LimitSelect => 
+  limit ? `SELECT * FROM ${table} LIMIT ${limit}` as const
+  : `SELECT * FROM ${table}` as const;
+
+const query = createQuery('users', 20);
+console.log(query);
+```
 
 
+
+
+関数のオーバーロード
+---
+```
+public class Main {
+public static void main(String args[]) {
+greet();
+    greet("Usagi");
+  }
+
+  static void greet() { 
+    System.out.println("Hello!");
+  }
+  static void greet(String name) { 
+   System.out.println("Hi, " + name + "!");
+  } 
+}
+```
 
