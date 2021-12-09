@@ -154,7 +154,7 @@ const animalKanji: AnimalNote = {
   dog: '犬',
   rabbit: '兎',
 };
-
+```
 
 関数のオーバーロード
 ---
