@@ -109,7 +109,51 @@ const query = createQuery('users', 20);
 console.log(query);
 ```
 
+## Pick<T,K> Omit<T,K>
+Pick<T,K> ...... T から K が指定するキーのプロパティだけを抽出する   
+Omit<T,K> ...... T から K が指定するキーのプロパティを省く   
 
+```
+type Todo = {
+title: string; 
+description: string; 
+isDone: boolean;
+};
+type PickedTodo = Pick<Todo, 'title' | 'isDone'>; //{ title: string; isDone: boolean }
+type OmittedTodo = Omit<Todo, 'description'>;  //{ title: string; isDone: boolean }
+```
+
+## Extract<T,K> Exclude<T,K>
+Extract<T,U> ...... T から U の要素だけを抽出する   
+Exclude<T,U> ...... T から U の要素を省く   
+
+```
+type Permission = 'r' | 'w' | 'x';
+type RW1 = Extract<Permission, 'r' | 'w'>;
+type RW2 = Exclude<Permission, 'x'>;
+```
+
+## NonNullable
+NonNullable<T> ...... T から null と undefined を省く  
+```
+type T1 = NonNullable<string | number | undefined>; 
+type T2 = NonNullable<number[] | null | undefined>;
+const str: T1 = undefined; //compileerror!
+const arr: T2 = null; // compile error!
+```
+
+## Record<K.T>
+Record<K,T> ...... K の要素をキーとしプロパティ値の型を T としたオブジェクトの型を作成す
+る   
+
+```
+type Animal = 'cat' | 'dog' | 'rabbit'; 
+type AnimalNote = Record<Animal, string>;
+const animalKanji: AnimalNote = { 
+  cat: '猫',
+  dog: '犬',
+  rabbit: '兎',
+};
 
 
 関数のオーバーロード
