@@ -17,9 +17,6 @@ T as (U extends T) または (T extends U) as U
 s2はできない。　　　
 基本的に型アサーションは最終手段   
 
-
-
-
 ## 型ガードでスマートに
 ```
 const foo: unknown = '1,2,3,4';
@@ -28,5 +25,8 @@ if (typeof foo === 'string') { console.log(foo.split(','));
 console.log(foo.split(',')); //compileerror!
 ```
 *typeof によって string 型だと判断されたブロック内*では、変数 foo に string のプロトタイプメソッdドである split() が使えてる。　　　
-　このようにスコープ内を保証するチェックを行う式を*型ガード*という
+　このようにスコープ内を保証するチェックを行う式を*型ガード*という   
+
+
+
 
