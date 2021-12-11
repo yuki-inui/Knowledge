@@ -27,6 +27,37 @@ console.log(foo.split(',')); //compileerror!
 *typeof によって string 型だと判断されたブロック内*では、変数 foo に string のプロトタイプメソッdドである split() が使えてる。　　　
 　このようにスコープ内を保証するチェックを行う式を*型ガード*という   
 
+## ユーザー定義の型ガード
+```
+type User = { username: string; address: { zipcode: string; town: string } };
 
+const isUser = (arg: unknown): arg is User => {
+  const u = arg as User;
+
+  return (
+    typeof u?.username === 'string' &&
+    typeof u?.address?.zipcode === 'string' &&
+    typeof u?.address?.town === 'string'
+  );
+};
+
+const u1: unknown = JSON.parse('{}');
+const u2: unknown = JSON.parse('{ "username": "patty", "address": "Maple Town" }');
+const u3: unknown = JSON.parse(
+'{ "username": "patty", "address": { "zipcode": "111", "town": "Maple Town" } }', 
+);
+
+[u1, u2, u3].forEach((u) => {
+  if (isUser(u)) {
+    console.log(`${u.username} lives in &{u.address.town}`);
+  } else {
+    console.log("It's not User");
+    console.log(`${u.username}livesin${u.address.town}`); //compileerror!
+  }
+});
+```
+`isUser()` の戻り値の型定義が `arg is User`。これは*型述語(Type Predicate)*です　　　
+この関数が true を返す場合に引数 arg の型が User であ ることがコンパイラに示唆される　　　
+これが型ガードになる。   
 
 
