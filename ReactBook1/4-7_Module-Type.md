@@ -62,3 +62,28 @@ $ cd 04-typescript/05-advanced/module/ $ ts-node currency-import.ts
 暗黙のうちに型とオブジェクトを同時にインポートする。   
 
 ```
+type Species = 'rabbit' | 'bear' | 'fox' | 'dog';
+
+class Resident {
+  name = '';
+  age = 0;
+  species: Species | null = null;
+}
+
+export type { Species, Resident };
+```
+
+```
+import { Resident } from './resident';
+constresident = new Resident(); //compileerror! 
+const patty: Resident = {
+  name: 'Patty Rabbit', 
+  age: 8,
+  species: 'rabbit',
+};
+
+console.log(patty);
+```
+
+## JavascriptモジュールをTypescriptから読み込む
+
