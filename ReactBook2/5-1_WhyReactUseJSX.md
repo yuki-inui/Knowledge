@@ -3,7 +3,7 @@
 JSXはJavascriptとXMLの組み合わせでできている。   
 ECMAScript2015の構造拡張である。　　　
 
-変換前のJSXコード    
+変換前のJSXコード
 ```
 <button type="submit" autoFocus> 
   Click Here
