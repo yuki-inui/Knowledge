@@ -1,7 +1,7 @@
 # 本格関数型プログラミング
 カリー化のと関数の部分適用
 ---
-
+```
 // Pre-curried     
 {  
 const multiply = (n, m) => n * m;  
@@ -20,18 +20,21 @@ console.log(withMultiple(2)(4)); //8
 const withMultiple = (n) => (m) => n * m;      
 console.log(withMultiple(2)(4)); //8     
 }    
-
+```
 Curriedは nを引数とした上で「mを引数にとり n との積を返す関数」を返す関数　　
 
 省略形で表すと   
+```
 const withMultiple = (n) => (m) => n * m;   
 console.log(withMultiple(3)(5)); //15   
 
 const triple = withMultiple(3);   
 console.log(triple(5));   
+```
 
 
 # クロージャーについて
+```
 let count = 0;   
 const increment = () => { return count += 1;   
 };   
@@ -40,15 +43,16 @@ $ node
  increment(); 1  
  increment(); 2  
  count 2   
- 
+ ```
  このままではconstの値に依存することになり、グローバル変数がゆえにどこからでも、改変が可能になる　　　
  
- 
+ ```
  $ node  
  const counter = (count = 0) => (adds = 1) => count += adds;   
  const increment = counter();`   
  increment(); 1   
  increment(2); 3
+ ```
  
  
  let frinedship;   
