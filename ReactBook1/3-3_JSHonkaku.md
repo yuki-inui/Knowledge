@@ -77,10 +77,3 @@ friendship(); //Kakerusaved　
 ```　　
 
 こうすることで参照をされる
- 
- 
-
-
-
-
-
