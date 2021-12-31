@@ -7,20 +7,20 @@
 - every() 与えられた要素が全て適合するか真偽値で出力する
 - some()  与えられた要素の中、一つでも適合すれば真を出すもの
 ```
-const　arr　=　[1, 2, 3, 4, 5, 6, 7, 8, 9];<br>
+const　arr　=　[1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-console.log(arr.map((n) => n * 2));<br>
-console.log(arr.filter((n) => n % 3 === 0));<br>
-console.log(arr.find((n) => n > 4));<br>
-console.log(arr.findIndex((n) => n > 4));<br>
-console.log(arr.every((n) => n !== 0));<br>
-console.log(arr.some((n) => n >= 10));<br>
+console.log(arr.map((n) => n * 2));
+console.log(arr.filter((n) => n % 3 === 0));
+console.log(arr.find((n) => n > 4));
+console.log(arr.findIndex((n) => n > 4));
+console.log(arr.every((n) => n !== 0));
+console.log(arr.some((n) => n >= 10));
 ```
 reduceの説明
 ---
-reduce(n, m);  (n:第一引数, m:第二引数)<br>
-mは配列の順序ごとに数字が代入される。<br>
-nは前回の結果が入る<br>
+reduce(n, m);  (n:第一引数, m:第二引数)
+mは配列の順序ごとに数字が代入される。
+nは前回の結果が入る
 
 - 1回目: mは１回目の数字であるため、１が処理される。
 - 2回目: nは`1`であり、mは2回目の2が計算され、　3が処理される
@@ -36,44 +36,46 @@ sortの説明
 「比較関数」
 - 第 1 引数が第 2 引数より優先度が高い(前に来る)場合、-1 を返す
 - 第 1 引数が第 2 引数より優先度が低い(後に来る)場合、1 を返す
-- 第 1 引数と第 2 引数の優先度が同じ(ソートの必要がない)場合、0 を返す(※省略可)<br>
+- 第 1 引数と第 2 引数の優先度が同じ(ソートの必要がない)場合、0 を返す(※省略可)
 　
  
  参考コード<br>
-`const arr = [1,2,3,4,5];`<br>
-`console.log(arr.reduce((n, m) => n + m)); // 15`<br>
-`console.log(arr.sort((n, m) => n > m? -1 : 1)); //[5,4,3,2,1]`<br>
+`const arr = [1,2,3,4,5];`
+`console.log(arr.reduce((n, m) => n + m)); // 15`
+`console.log(arr.sort((n, m) => n > m? -1 : 1)); //[5,4,3,2,1]`
 
 Sliceの説明
 ---
-Sliceメソッドは　startとend が明記されている場合、startからendまで(endは含まない)の要素を返す。<br>
-  `-2`などマイナスではあれば配列の最後のものを列挙する。<br>
-  無名関数であれば、そのまま配列をコピーしてくれる。<br>
+Sliceメソッドは　startとend が明記されている場合、startからendまで(endは含まない)の要素を返す。
+  `-2`などマイナスではあれば配列の最後のものを列挙する。
+  無名関数であれば、そのまま配列をコピーしてくれる。
   
-参考コード<br>
-`const lst = [5, 7, 1, 3];`<br>
-`console.log(lst.slice().sort((n, m) => n < m ? -1 : 1)); //[1,3,5,7]`<br>
-`console.log(lst); //[5,7,1,3]`<br>
+参考コード
+```
+const lst = [5, 7, 1, 3];
+console.log(lst.slice().sort((n, m) => n < m ? -1 : 1)); //[1,3,5,7]`
+console.log(lst); //[5,7,1,3]`
 
 objectと反復処理
 ---
-`Object.key()`はプロパティのキーのリスト<br>
-`Object.value()`はプロパティ値のリスト<br>
-`Object.entire()`はキーと一体となった全て<br>
+`Object.key()`はプロパティのキーのリスト
+`Object.value()`はプロパティ値のリスト
+`Object.entire()`はキーと一体となった全て
 
-参考コード<br>
-`const user = {`<br>
- `name: 'Yuki-Inui',`<br>
- `username: 'Yuki',`<br>
- `id: 3,`<br>
- `email: Yuki@gmail.com,`<br>
- `};`<br>
+参考コード
+```
+const user = {
+ name: 'Yuki-Inui',
+ username: 'Yuki',
+ id: 3,
+ email: Yuki@gmail.com,
+ };
  
-`console.log(Object.keys(user));`<br>
-`// [ 'id', 'name', 'username', 'email' ]`<br>
+console.log(Object.keys(user));
+// [ 'id', 'name', 'username', 'email' ]
 
-`console.log(Object.values(user));`<br>
-`// [ 3, 'Bobby Bear', 'bobby', 'bobby@maple.town' ]`<br>
+console.log(Object.values(user));
+// [ 3, 'Bobby Bear', 'bobby', 'bobby@maple.town' ]
 
 
 
