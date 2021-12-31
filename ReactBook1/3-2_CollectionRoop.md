@@ -76,7 +76,7 @@ console.log(Object.keys(user));
 
 console.log(Object.values(user));
 // [ 3, 'Bobby Bear', 'bobby', 'bobby@maple.town' ]
-
+```
 
 
   
