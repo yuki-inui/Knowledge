@@ -44,7 +44,7 @@ $ node
  increment(); 2  
  count 2   
  ```
- このままではconstの値に依存することになり、グローバル変数がゆえにどこからでも、改変が可能になる　　　
+ このままではconstの値に依存することになり、グローバル変数がゆえ、にどこからでも改変が可能になる　　　
  
  ```
  $ node  
@@ -53,21 +53,28 @@ $ node
  increment(); 1   
  increment(2); 3
  ```
+引数でもなくローカルの変数でもないものを`自由変数(Free Variable)`という   
+ex)  count, adds　など   
+
  
- 
+``` 
  let frinedship;   
 if (true) {          
-const he = 'Kakeru'; const saveHim = () => {     
+const he = 'Kakeru';
+const saveHim = () => {     
 console.log(`${he} saved`); };      
 }
+```
 このままではheがifを外れると、どこからも参照されなくなる。
 
 ここで
+```
 const saveHim = () => {　　　　
 console.log(`${he} saved`); };　　　　　　
-+ friendship=saveHim;　　　　　　　
+ friendship=saveHim;　　　　　　　
 }　　　　
-+friendship(); //Kakerusaved　　　
+friendship(); //Kakerusaved　
+```　　
 
 こうすることで参照をされる
  
