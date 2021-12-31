@@ -18,9 +18,9 @@ type B = { foo: string };
 type C = { bar: string };
 type D = { baz: boolean };
 
-typeAorB=A|B; //{foo:number|string; bar?:string}
-typeAorC=A|C; //{foo:number;bar?:string} or {bar:string}
-typeAorD=A|D; //{foo:number;bar?:string} or {baz:boolean}
+typeAorB= A | B; //{foo:number | string; bar?:string}
+typeAorC= A | C; //{foo:number;bar?:string} or {bar:string}
+typeAorD= A | D; //{foo:number;bar?:string} or {baz:boolean}
 ```
 
 交差型(AかつB)
