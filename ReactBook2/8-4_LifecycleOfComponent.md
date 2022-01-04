@@ -8,7 +8,7 @@
 	4 ErrorHandlingフェーズ: 子孫コンポーネントのエラーを検知補足する。   
 
 2の「変更を検知して再レンダリング」は基本的に２つある。propsもしくはstateの変更  
-Mountingフェーズ    
+1 Mountingフェーズ    
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
 | constructor(props) | void | クラスのコンストラクタ |
