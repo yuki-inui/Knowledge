@@ -19,6 +19,7 @@
 2 Updatingフェーズ
 
 | メソッド | 戻り値 | 説明 |
+| -- | -- | -- |
 | static<br>getDerivedStateFromProps(prop,state) | State or null | renderメソッ>ド実行の直前に呼ばれ<br>戻り値で新しいstateが設定 |
 | shouldComponentUpdates<br>(nextProps,nextState) | boolean | 変更を検知してから再レンダリングの前に呼ばれ<br>falseを返すことでさいレンダリングを中止する。
 | render() | ReactElement | レンダリングの内容を返す |
@@ -28,11 +29,13 @@
 3 Unmountingフェーズ
 
 | メソッド | 戻り値 | 説明 |
+| -- | -- | -- |
 | componentWillUnmount() | void | コンポーネントがアンマウントされて破棄される<br>直前に呼ばれる。 |
 
 4 Error Handlingフェーズ
 
 | メソッド | 戻り値 | 説明 |
+| -- | -- | -- |
 | componentDidCatch(error,info) | void | 子孫コンポーネントで例外が起きた時に呼ばれる |
 | static<br>getDerivedStateFromError(error) | State or null | 子孫コンポーネントで例外が起きた時に呼ばれ、戻り値で新しいstateが設定できる |
 
