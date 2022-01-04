@@ -12,3 +12,5 @@
 | -- | -- | -- |
 | constructor(props) | void | クラスのコンストラクタ |
 | static<br>getDerivedStateFromProps(prop,state) | State or null | renderメソッド実行の直前に呼ばれ<br>戻り値で新しいstateが設定 |
+| render() | ReactElement | レンダリングの内容を返す |
+| componentDidMount() | void | コンポーネントがマウントされた直後に呼ばれる |
