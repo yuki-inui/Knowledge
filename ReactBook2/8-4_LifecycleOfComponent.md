@@ -11,4 +11,4 @@
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
 | constructor(props) | void | クラスのコンストラクタ |
-| static<br>getDerivedStateFromProps(prop,state) | State | null | renderメソッド実行の直前に呼ばれ、戻り値で新しいstateが設定 |
+| static<br>getDerivedStateFromProps(prop,state) | State|null | renderメソッド実行の直前に呼ばれ、戻り値で新しいstateが設定 |
