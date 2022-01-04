@@ -39,4 +39,4 @@
 | componentDidCatch(error,info) | void | 子孫コンポーネントで例外が起きた時に呼ばれる |
 | static<br>getDerivedStateFromError(error) | State or null | 子孫コンポーネントで例外が起きた時に呼ばれ、戻り値で新しいstateが設定できる |
 
-aaa
+
