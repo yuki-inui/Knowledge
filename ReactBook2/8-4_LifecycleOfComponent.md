@@ -61,18 +61,18 @@ class App extends Component<unknown, State> {
   };
 
   componentDidUpdate = (): void => {
-    const { timeLeft } = this.state;
-    if (timeLeft === 0) this.reset();
+    const { timeLeft } = this.state;     //?
+    if (timeLeft === 0) this.reset();　　//timeLeftが0になればリセット
   };
 
   componentWillUnmount = (): void => {
-    if (this.timerId) clearInterval(this.timerId);
+    if (this.timerId) clearInterval(this.timerId);   //this.timerIdを止める
   };
 
   tick = (): void =>
-    this.setState((prevState) => ({ timeLeft: prevState.timeLeft -1 }));
+    this.setState((prevState) => ({ timeLeft: prevState.timeLeft -1 }));　　　//timeleft-1　をする関数
 
-  reset = (): void => this.setState({ timeLeft: LIMIT });
+  reset = (): void => this.setState({ timeLeft: LIMIT });  
 
   render = (): ReactElement => {
     const { timeLeft } = this.state;
