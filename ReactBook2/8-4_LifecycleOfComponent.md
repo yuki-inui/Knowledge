@@ -51,13 +51,13 @@ type State = { timeLeft: number };
 class App extends Component<unknown, State> {
   timerId: NodeJS.Timer | null = null;
 
-  constructor(props: unknown){
-    super(props);
-    this.state = { timeLeft: LIMIT };
+  constructor(props: unknown){     
+    super(props);                     //super(props)は親クラスのコンストラクタを呼び出す役割
+    this.state = { timeLeft: LIMIT };   //super(props)がないとthis.stateが使えない
   };
 
   componentDidMount = (): void => {
-    this.timerID = setInterval(this.tick, 1000);
+    this.timerID = setInterval(this.tick, 1000);   //tickを1000ミリ秒(1秒)ごとに実行される
   };
 
   componentDidUpdate = (): void => {
