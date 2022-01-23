@@ -31,6 +31,7 @@ console.log(8 / 2); => 4
 ```
 console.log(9 % 2);  => 1
 console.log(8 % 2); => 0
+```
 
 ### べき上演算子
 ```
