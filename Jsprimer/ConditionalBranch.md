@@ -18,4 +18,21 @@ function ECMAScriptNama(version) {
 return ECMAScript("ES5");  //ECMAScript5
 ```
 
+複数の条件に対応するものを作る（？）時
+```
+const Height = 165;
+      Weigh  = 55;
+
+function getBMI(Height, Weigh) {
+	switch (Height, Weigh) {
+		case Heigh > 165 && Weigh > 55:
+			return "ほどほどやな";
+		case Heigh <= 165 && Weigh <= 55:
+			return "痩せすぎよ";
+		}
+	}
+```
+
+論理演算子で条件を絞れる。
+長ったらしい文にならないようにしよう。
 
