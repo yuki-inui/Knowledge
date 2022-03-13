@@ -6,10 +6,15 @@
 3.　予約ごと被るものは利用できない。 
 
 ```
-const $; // 使用できます$
-const _title; // 使用できます_
-const jquery; // 小文字できます 
-const TITLE; // 大文字アルファベット使用できる。
-const es2015; // 数字は先頭以外ならできる。  
+const $; // OK $
+const _title; // OK _
+const jquery; // OK 小文字 
+const TITLE; // OK 大文字
+const es2015; // OK 先頭以外に数字がついたらいい  
 const 日本語の命名: // 日本語はできる。  
+```
+
+```
+const 1st; // 数字から始まるのはNG  
+const 124; // 数字のみはNG
 ```
