@@ -145,6 +145,50 @@ if (obj.hasOwnProperty("key")) {
 	console.log("`obj`は`key`プロパティを持っている)
 ```
 
+##  Optional Chaining演算子(?.)
+```
+const book = undefined;
+const title = book === null || book === undefined ? undefined : book.title;
+console.log(title);  //nullやundefinedを入れてエラーを起こさないため
+ 
+const book = { title: "サバイバルTypeScript" };
+const title = book === null || book === undefined ? undefined : book.title;
+console.log(title);
+```
+上記の方法では冗長になる。ここでOptionalChaining演算子(?.)を使う  
+```
+const book = undefined;
+const title = book?.title;  //?.がOptionalChaining
+//                ^^オプショナルチェーン
+console.log(title);
+ 
+const book = { title: "サバイバルTypeScript" };
+const title = book?.title;
+console.log(title);
+```
+つまり、空にアクセスした際にundefinedを出力させるようにした。  
+
+## toStringメソッド
+toStringメソッドは、オブジェクトを文字列化させるものである。Stringコントラクタ関数とどう言う関係？  
+``String()``では``toString``を呼び出しているため、同じ結果になる。
+```
+const obj = { key: "value" };
+console.log(obj.toString()); // => "[object Object]"
+// `String`コンストラクタ関数は`toString`メソッドを呼んでいる
+console.log(String(obj)); // => "[object Object]"
+```
+
+## Objectのプロパティは文字列になる
+```
+const obj = {};
+const keyObject1 = { a: 1 };
+const keyObject2 = { b: 2 };
+// どちらも同じプロパティ名（"[object Object]"）に代入している
+obj[keyObject1] = "1";
+obj[keyObject2] = "2";
+console.log(obj); //  { "[object Object]": "2" }
+```
+
 ## オブジェクトの列挙
 Object.keys: オブジェクトのプロパティ名の配列にして返す  
 Object.values: オブジェクトの値に配列にして返す  
@@ -162,7 +206,41 @@ console.log(Object.values(obj)); // => [1, 2, 3]
 console.log(Object.entries(obj)); // => [["one": 1], ["two": 2], ["three": 3]]
 ```
 
+forEach文を使うことで列挙できる
+```
+const obj = {
+	"one": 1,
+	"two": 2,
+	"three": 3
+};
+const keys = Object.keys(obj);
+keys.forEach(key => {
+	console.log(key)
+});
+```
 
+## Objectのmergeと複製
+```
+const obj = Object.assign(target, ...sources);
+```
 
+空オブジェクト{}に``objectA``と``objectB``をmergeする
+```
+const objectA = { a: "a" };
+const objectB = { b: "b" };
+const merge = Object.assign({}, objectA, objectB);
+console.log(merge); // { a: "a", b: "b" }
+```
 
+##  Objectのspread構文
+```
+const ObjectA = { a: "a" };
+const ObjectB = { b: "b" };
+const merge = {
+	...ObjectA,
+	...ObjectB 
+};
+
+console.log(merge); // { a: "a", b: "b" }
+```
 
