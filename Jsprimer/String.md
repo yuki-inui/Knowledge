@@ -270,4 +270,17 @@ reduce(/文字列/g, ●)　は全て
 | ``replaceAll`` | 文字列全てを置換する("?"などの特殊文字も可) |
 | ``replace+`g`付き | "?"などの特殊文字不可 |
 
+```
+// 検索対象となる文字列
+const str = "???";
+// replaceメソッドに文字列を指定した場合は、最初に一致したものだけが置換される
+console.log(str.replace("?", "!")); // => "!??"
+// replaceAllメソッドに文字列を指定した場合は、一致したものがすべて置換される
+console.log(str.replaceAll("?", "!")); // => "!!!"
+// replaceメソッドの場合は、正規表現の特殊文字はエスケープが必要となる
+console.log(str.replace(/\?/g, "!")); // => "!!!"
+// replaceAllメソッドにも正規表現を渡せるが、この場合はエスケープが必要となるためreplaceと同じ
+console.log(str.replaceAll(/\?/g, "!")); // => "!!!"
+```
+
 
