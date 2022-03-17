@@ -66,6 +66,34 @@ function fn() {
 }
 ```
 
+## 参照の範囲を狭める
+コードを書くにつれ、どの変数がピックされるかわからない。その対処法は関数にする
+
+```
+const doHeavyTask() {
+//　書きたいなよう
+};
+
+const startTime = Date.now();
+doHeavyTask();
+const endTime = Date.now();
+console.log(`実行時間は${startTime - endTime}ミリ秒`);
+```
+このコードでは``startTime``と``endTime``関数がグローバルスコープになっている。  
+```
+// 実行時間を計測したい関数をコールバック関数として引数に渡す
+const measureTask = (taskFn) => {
+    const startTime = Date.now();
+    taskFn();
+    const endTime = Date.now();
+    console.log(`実行時間は${endTime - startTime}ミリ秒`);
+};
+function doHeavyTask() {
+    // 計測したい処理
+}
+measureTask(doHeavyTask);
+```
+
 ## 関数スコープとvarの巻き上げ
 初期値を持たない変数を宣言すると、undefinedになる。
 ```
