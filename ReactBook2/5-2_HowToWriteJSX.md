@@ -80,6 +80,6 @@ const elems = (
     <div>baz</div>
   </>
 );
-// <> は元は```<React.Fragment>```というコンポーネント。それの省略技法。
+// <> は元は<React.Fragment>というコンポーネント。それの省略技法。
 ```
 
