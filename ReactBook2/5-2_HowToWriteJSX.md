@@ -2,7 +2,7 @@
 
 ## JSXの基本的な文法
 JSXは``React.createElement``のメソッドコールに対するシンタックスシュガーである。
-また、``tsconfig.json``で``jsx``オプションを``react``にすると、  
+また、``tsconfig.json``で``jsx``オプションを``react``にすると、
 JSXの記載は、``React.createElement(...)``のように変換される。  
 であるため、JSXの記載においては、``React``のインポートが必要になる。  
 
