@@ -1,14 +1,13 @@
-　ライフサイクルとは、まずマウントして初期化され、次にレンダリングされた後、 何らかのきっかけで再レンダリングされ、最後にアンマウントされるまでの過程。  
+コンポーネントにおけるライフサイクルとは  
+ - マウントして初期化され、次にレンダリングされた後、何らかの理由で再レンダリングされ、アンマウントするまで。  
 
 ライフサイクルメソッド  
-	1 Mountingフェーズ: コンポーネントが初期化され、仮想DOMにマウントされる	　        までのフェーズ。ここで初めてレンダリングされる。   
-	2 Updatingフェーズ: 差分検出処理エンジンが変更を検知してコンポーネント
-	  が再レンダリングされる。  
-	3 Unmountingフェーズ: コンポーネントが仮想DOMから削除される。  
-	4 ErrorHandlingフェーズ: 子孫コンポーネントのエラーを検知補足する。   
+- `Mounting`フェーズ      :コンポーネントが初期化され、仮想DOMにマウントされるまでのフェーズ。
+- `Updating`フェーズ      :差分検出処理エンジンが変更を検知して、コンポーネントが再レンダリングされるフェーズ。
+- `Unmounting`フェーズ    :コンポーネントが仮想DOMから削除されるフェーズ。
+- `Error Handling`フェーズ:子孫コンポーネントの`Error`を検知補足するフェーズ。
 
-2の「変更を検知して再レンダリング」は基本的に２つある。propsもしくはstateの変更  
-1 Mountingフェーズ    
+- Mountingフェーズ    
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
 | constructor(props) | void | クラスのコンストラクタ |
@@ -16,7 +15,7 @@
 | render() | ReactElement | レンダリングの内容を返す |
 | componentDidMount() | void | コンポーネントがマウントされた直後に呼ばれる |
 
-2 Updatingフェーズ
+- Updatingフェーズ
 
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
@@ -26,13 +25,13 @@
 | getSnapShotBeforeUpdate<br>(nextProps,nextState) | SnapShot or null | 再レンダリング内容がDOMに反映される直前に呼ばれ、<br>戻り値でスナップショットをとっておき、<br>それを、componentDidUpdateに渡すことができる。 |
 | componentDidUpdate<br>(prevProps, prevState, snapshot?) | void | 再レンダリングの完了直後に呼ばれる |
 
-3 Unmountingフェーズ
+- Unmountingフェーズ
 
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
 | componentWillUnmount() | void | コンポーネントがアンマウントされて破棄される<br>直前に呼ばれる。 |
 
-4 Error Handlingフェーズ
+- Error Handlingフェーズ
 
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
