@@ -8,6 +8,7 @@
 - `Error Handling`フェーズ:子孫コンポーネントの`Error`を検知補足するフェーズ。
 
 - Mountingフェーズ    
+
 | メソッド | 戻り値 | 説明 |
 | -- | -- | -- |
 | constructor(props) | void | クラスのコンストラクタ |
