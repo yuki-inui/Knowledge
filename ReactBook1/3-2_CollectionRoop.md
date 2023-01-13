@@ -39,10 +39,12 @@ sortの説明
 - 第 1 引数と第 2 引数の優先度が同じ(ソートの必要がない)場合、0 を返す(※省略可)
 　
  
- 参考コード<br>
-`const arr = [1,2,3,4,5];`
-`console.log(arr.reduce((n, m) => n + m)); // 15`
-`console.log(arr.sort((n, m) => n > m? -1 : 1)); //[5,4,3,2,1]`
+ 参考コード
+ ```
+const arr = [1,2,3,4,5];
+console.log(arr.reduce((n, m) => n + m)); 
+console.log(arr.sort((n, m) => n > m? -1 : 1)); 
+```
 
 Sliceの説明
 ---
