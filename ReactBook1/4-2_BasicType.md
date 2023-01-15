@@ -1,9 +1,13 @@
-``型アノテーション(Type Annotation)``
+型アノテーション(Type Annotation)
 ---
 ``value: Type``で表されるもの。
 型アノテーションによって静的に型つけられたものは、コンパイルチェックに用いられる。
-不整合があればコンパイルエラーになる。
+不整合があればコンパイルエラーになる。   
 
+```
+const numArr: number[] = [1, 2, 3];
+const strArr: Array<string> = ['one', 'two', 'three'];
+```
 
 リテラル型
 ---
