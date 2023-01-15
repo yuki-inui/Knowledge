@@ -68,5 +68,36 @@ getArea = (): number => this.sideA * this.sideB;
 ```
 ``プロパティ初期化子(Property Initializer)``はコンストラクタに引数がないクラスは、インスタンスの初期化だけで済ます。   
 
-- readonly: メンバー変数を変更不可にできる。  
-- 
+- ``readonly`` : メンバー変数を変更不可にできる。  
+- ``public`` : 自クラス、子クラス、インスタンスからアクセス可能。デフォルトではすべてpublicになる。
+- ``protected`` : 自クラス、子クラスからアクセス可能。インスタンスからは不可。
+- ``private`` : 自クラスから可能。子クラス、インスタンスからは不可。
+
+``継承より合成``現在のオブジェクト指向においてのトレンドである。  
+
+```
+class Square extends  Rectangle {
+  readonly name = 'square';
+  side: number;
+
+  constructor(side: number){
+    super(side, side);
+  }
+}
+
+class Square {
+  readonly name = 'square'; 
+  side: number;
+
+  constructor(side: number) {
+     this.side = side;
+}
+getArea = (): number => new Rectangle(this.side, this.side).getArea();
+ }
+ ```
+
+継承では、暗黙の内にReactangleのクラス、sideAとsideBを継承しているため、バグになりかねない。  
+また、getArea()は親クラスに大きく依存しているため、不用意に変更ができない。  
+
+合成においてはReactangleクラスをただの独立した部品として扱っている。そのため内部について知る必要がない。  
+
