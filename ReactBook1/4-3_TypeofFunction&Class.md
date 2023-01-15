@@ -47,3 +47,26 @@ const add: (n: number, m: number)  => number = function(n, m){
 
 const subtract: (n: number, m: number) => number = (n, m) => n - m;
 ```
+前者は```呼び出し可能オブジェクトを定義```して、関数式として使っている。   
+
+
+Typescriptでのクラスの扱い
+---
+
+```
+class Rectangle {
+  readonly name = 'rectangle'; 
+  sideA: number;
+  sideB: number;
+
+constructor(sideA: number, sideB: number) { 
+  this.sideA = sideA;
+  this.sideB = sideB;
+ }
+getArea = (): number => this.sideA * this.sideB;
+}
+```
+``プロパティ初期化子(Property Initializer)``はコンストラクタに引数がないクラスは、インスタンスの初期化だけで済ます。   
+
+- readonly: メンバー変数を変更不可にできる。  
+- 
