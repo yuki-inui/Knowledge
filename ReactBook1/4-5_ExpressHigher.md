@@ -22,7 +22,9 @@ NumArrは`number[]`であるため`string[]`はエラーになる。これは型
 ```
 const obj={　a:　1,　b:　2,　c:　3};
 console.log('a' in obj); // true
-for(const key in obj){console.log(key);} //abc
+for(const key in obj){
+  console.log(key);
+  } //abc
 
 type Fig = 'one' | 'two' | 'three'; 
 type FigMap = { [k in Fig]?: number };
