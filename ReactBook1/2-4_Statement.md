@@ -54,7 +54,6 @@ showname('jon', 'jony', 'json', 'julia');
 const showallargs = (...args) => {
   console.log(args);
 };
-
 console.log(showallargs('A', 'B', 'C', 'D')); // ['A', 'B', 'C', 'D']
 '''
 
