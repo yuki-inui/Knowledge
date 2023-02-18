@@ -50,15 +50,15 @@ const showname = (a, b, ...rest) => {
 showname('jon', 'jony', 'json', 'julia');
 ```
 第二引数以降しか使えないわけではない。第一引数としてReat Parametorsを使えば中身全てを配列として返す。  
-'''
+```
 const showallargs = (...args) => {
   console.log(args);
 };
 console.log(showallargs('A', 'B', 'C', 'D')); // ['A', 'B', 'C', 'D']
-'''
+```
 
 またRest Parametorsを名前をつけて取得したい場合は以下のように記述する。  
-'''
+```
 const sum = (i, ...[j, k, l]) => i + j + k + l;
 console.log(sum(1, 2, 3, 4)); //10
 console.log(sum(1, 1, 1, 1, 1)); //4　超過分は消される。
