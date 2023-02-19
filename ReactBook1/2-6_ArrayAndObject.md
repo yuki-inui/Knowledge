@@ -63,6 +63,24 @@ const assigned = {...original, ...{ c: 10, d: 50 }, d: 100 };
 console.log(assigned); // { a: 1, b: 2, c: 10, d: 100 }
 console.log(original); // { a: 1, b: 2, c: 3 }
 ```
-この記述でoriginalが汚染されずに変更がされたが、これは**シャローコピー**[^1]といってコピーされる深さが１段階までしか有効ではない。  
+この記述でoriginalが汚染されずに変更がされたが、これは**シャローコピー**[^2]といってコピーされる深さが１段階までしか有効ではない。  
 プロパティの値がオブジェクト・配列であった場合はそれらの値までコピーできない。  
+[^2]: 
+以下、その例  
+```
+const patty = {
+name: 'Patty Rabbit',
+email: 'patty@maple.town', address: { town: 'Maple Town' },
+};
+
+const rolley = { ...patty, name: 'Rolley Cocker' }; 
+rolley.email = 'rolley@palm.town'; 
+rolley.address.town = 'Palm Town';
+console.log(patty);
+//{
+// name:'PattyRabbit',
+// email:'patty@maple.town', // address:{town:'PalmTown'} //}
+```
+
+
 
