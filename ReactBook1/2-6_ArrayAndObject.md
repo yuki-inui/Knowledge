@@ -51,3 +51,18 @@ console.log(users);
 ## オブジェクトのマージとコピー
 オブジェクト型の値は別の変数に代入しただけだと、参照渡し[^1]になり実体を共有されたままになる。  
 [^1]: 渡された引数が変更されたら、呼び出し元も変更される。
+
+スプレッド構文を使ってコピーをしていく。  
+```
+const original = { a: 1, b: 2, c: 3 };
+const copy = {...original};
+console.log(copy); //{ a: 1, b: 2, c: 3 }
+console.log(original === copy); //false
+
+const assigned = {...original, ...{ c: 10, d: 50 }, d: 100 };
+console.log(assigned); // { a: 1, b: 2, c: 10, d: 100 }
+console.log(original); // { a: 1, b: 2, c: 3 }
+```
+この記述でoriginalが汚染されずに変更がされたが、これは**シャローコピー**[^1]といってコピーされる深さが１段階までしか有効ではない。  
+プロパティの値がオブジェクト・配列であった場合はそれらの値までコピーできない。  
+
